@@ -1,0 +1,49 @@
+.container-fluid{
+    padding: 10px;
+    background: #212529;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btns button{
+    border-radius: 0;
+    margin-right: 10px;
+}
+
+.login-btn,.signup-btn{
+    color: #fff !important;
+    text-decoration: none;
+    margin-right: 10px !important;
+}
+
+.btns a{
+    color: #dbe3d3 !important;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.btns a:hover {
+    border-bottom: 2px solid #dbe3d3;
+}
+
+body{
+    background: #393939;
+    color: #dbe3d3;
+}
+
+.containers{
+    width: 40%;
+    margin: auto;
+    position: relative;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.title{
+    margin-top: 8%;
+}

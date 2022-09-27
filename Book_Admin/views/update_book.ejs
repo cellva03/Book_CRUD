@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <main id="site-mai">
+      <div class="form-title text-center" style="margin-top: 20px">
+        <h2>Update Book</h2>
+      </div>
+      <div class="containers" style="margin-top: 30px">
+        <!-- user form -->
+
+        <!-- form -->
+        <form
+          method="post"
+          id="update_user"
+          class="form-check mt-4"
+          action="/dashboard/update-book"
+        >
+          <div class="form-outline mb-4">
+            <label class="form-label">Book Title</label>
+            <input type="hidden" name="id" value="<%=books._id %>" />
+            <input
+              type="text"
+              id="title"
+              value="<%=books.title %>"
+              name="title"
+              class="form-control"
+              placeholder="Enter title..."
+            />
+          </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label">PageCount</label>
+            <input
+              type="number"
+              id="pageCount"
+              value="<%=books.pageCount %>"
+              name="pageCount"
+              class="form-control"
+              placeholder="Enter the
+            pages..."
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label">Published Date</label>
+            <input
+              type="text"
+              id="publishedDate"
+              value="<%=books.publishedDate %>"
+              name="publishedDate"
+              class="form-control"
+              placeholder="Enter the date..."
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label">thumbnailUrl</label>
+            <input
+              type="text"
+              id="thumbnailUrl"
+              value="<%=books.thumbnailUrl %>"
+              name="thumbnailUrl"
+              class="form-control"
+              placeholder="Enter the thumbnailUrl..."
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label">Author</label>
+            <input
+              type="text"
+              id="authors"
+              value="<%=books.authors %>"
+              name="authors"
+              class="form-control"
+              placeholder="Enter the authors..."
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label">categories</label>
+            <input
+              type="text"
+              id="categories"
+              value="<%=books.categories %>"
+              name="categories"
+              class="form-control"
+              placeholder="Enter the categories..."
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary btn-block mb-4"
+            style="float: right"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </main>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

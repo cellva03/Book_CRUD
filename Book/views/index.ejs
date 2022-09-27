@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Books</a>
+        <div class="btns">
+          <button class="btn btn-primary login-btn">
+            <a class="login-btn" href="/login">Login</a>
+          </button>
+          <button class="btn btn-success register-btn">
+            <a class="signup-btn" href="/register">Register</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <section class="mains" style='margin-top: 50px;'>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 style='color: black;'>Books</h3>
+              </div>
+              <div class="card-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Title</th>
+                      <th>Author</th>
+                      <th>Categories</th>
+                      <th>Publish Date</th>
+                      <th>Pages</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if (books.length > 0) { %>
+                      <% books.forEach(function(book) { %>
+                        <tr>
+                          <td><img src=<%= book.thumbnailUrl %> width="100px" height="150px" alt="img"></td>
+                          <td><%= book.title %></td>
+                          <td><%= book.authors %></td>
+                          <td><%= book.categories %></td>
+                          <td><%= book.publishedDate %></tdd>
+                          <td><%= book.pageCount %></td>
+                        </tr>
+                      <% }) %>
+                     
+                    <% } else {%>
+                      <tr>
+                        <td colspan="6" class="text-center">No books found</td>
+                      </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

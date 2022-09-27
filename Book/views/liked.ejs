@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/dashboard">Books</a>
+          <div class="btns">
+              <a href="/readlater">Read Later</a>
+              <a href="/liked">Liked</a>
+              <a href="/">Logout</a>
+          </div>
+        </div>
+      </nav>
+      <section class="mains" style='margin-top: 50px;'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 style='color: black;'>Books</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Categories</th>
+                        <th>Publish Date</th>
+                        <th>Pages</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if (bookss.length > 0) { %>
+                        <% bookss.forEach(function(book) { %>
+                          <tr>
+                            <td><img src=<%= book.thumbnailUrl %> alt="img" width="100px" height="150px"></td>
+                            <td><%= book.title %></td>
+                            <td><%= book.authors %></td>
+                            <td><%= book.categories %></td>
+                            <td><%= book.publishedDate %></tdd>
+                            <td><%= book.pageCount %></td>
+                          </tr>
+                        <% }) %>
+                       
+                      <% } else {%>
+                        <tr>
+                          <td colspan="6" class="text-center">No Liked books found</td>
+                        </tr>
+                      <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+      </section>
+      <script src='./js/index.js'></script>
+  </body>
+</html>

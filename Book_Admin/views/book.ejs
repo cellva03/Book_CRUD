@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container" style="margin-top: 50px">
+      <a
+        href="/dashboard/add-book"
+        class="btn btn-sm btn-success"
+        style="margin-bottom: 20px"
+      >
+        <span class="text-gradient">
+          New Book <i class="fa-solid fa-book"></i>
+        </span>
+      </a>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 style="color: black">Books</h3>
+            </div>
+            <div class="card-body">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>pageCount</th>
+                    <th>Published Date</th>
+                    <th>Authors</th>
+                    <th>Categories</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if (books.length > 0) { %> <%
+                  books.forEach(function(book){%>
+                  <tr>
+                    <td>
+                      <img
+                        src="<%= book.thumbnailUrl %>"
+                        alt=""
+                        width="100px"
+                        height="150px"
+                      />
+                    </td>
+                    <td><%= book.title %></td>
+                    <td><%= book.pageCount%></td>
+                    <td><%= book.publishedDate%></td>
+                    <td><%= book.authors%></td>
+                    <td><%= book.categories%></td>
+                    <td>
+                      <a
+                        href="/dashboard/update-book"
+                        onclick="renderUpdateBookPage('<%=book._id%>')"
+                      >
+                        <button type="button" class="btn btn-success">
+                          update
+                        </button>
+                      </a>
+                    </td>
+                    <td>
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="cursor: pointer"
+                        onclick="deleteBook('<%=book._id%>')"
+                      ></i>
+                    </td>
+                  </tr>
+                  <% }) %> <% } else {%>
+                  <tr>
+                    <td colspan="8" class="text-center">No Books found</td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/index.js"></script>
+</html>

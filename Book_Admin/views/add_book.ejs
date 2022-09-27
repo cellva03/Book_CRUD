@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <main id="site-mai">
+      <div class="form-title text-center" style="margin-top: 20px">
+        <h2>Add New Book</h2>
+      </div>
+      <div class="containers">
+        <form
+          action="/dashboard/add-book"
+          method="POST"
+          class="form-check mt-4"
+        >
+          <div class="form-outline mb-4">
+            <label class="form-label">Book Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              class="form-control"
+              placeholder="Enter title..."
+            />
+          </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label">PageCount</label><br />
+            <input
+              type="number"
+              id="pageCount"
+              name="pageCount"
+              class="form-control"
+              placeholder="Enter the pages..."
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label">Published Date</label>
+            <input
+              type="text"
+              id="publishedDate"
+              name="publishedDate"
+              class="form-control"
+              placeholder="Enter the pages..."
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label">thumbnailUrl</label>
+            <input
+              type="text"
+              id="thumbnailUrl"
+              name="thumbnailUrl"
+              class="form-control"
+              placeholder="Enter the thumbnailUrl..."
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label">Author</label>
+            <input
+              type="text"
+              id="authors"
+              name="authors"
+              class="form-control"
+              placeholder="Enter the authors..."
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label">categories</label>
+            <input
+              type="text"
+              id="categories"
+              name="categories"
+              class="form-control"
+              placeholder="Enter the categories..."
+            />
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block mb-4">
+            Submit
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
